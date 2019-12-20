@@ -19,4 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/films/index', 'FilmController@index');
+Route::get('/films/index', 'FilmController@index');    // /film/add_fav
+
+
+Route::get('/lists/index', 'List1Controller@index');//correct TO @FIND($USER->ID)
+
+Route::get('/lists/newList', 'List1Controller@create'); ///createList
+
+Route::get('/lists/insertList', 'List1Controller@insert');

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     
     <div class='table-responsive'></div>
@@ -27,8 +28,12 @@
                         <td>{{ $film->year }}</td>
                         <td>
                             <span>
-                                <button type="button" class='btn btn-outline-danger'>Add to Fav</button>
-                                <button type="button" class='btn btn-outline-success'>Romove from Fav</button>
+                                <form action="/list/add_fav">
+                                    <button type="button" class='btn btn-outline-danger'>Add to Fav</button>
+                                </form>
+                                <form action="/list/sub_fav">
+                                    <button type="button" class='btn btn-outline-success'>Romove from Fav</button>
+                                </form>
                             </span>
                         </td>
                     </tr>
