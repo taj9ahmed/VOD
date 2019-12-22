@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('content')
-
+@section('content')       
+        
+        
 <div class="container">
     
     <div class='table-responsive'></div>
@@ -14,7 +15,7 @@
                     <td>Poster</td>
                     <td>Trailer</td>
                     <td>Year</td>
-                    <td>List </td>
+                    
                 </tr>
             </thead>
                 <tbody>
@@ -28,19 +29,7 @@
                             <iframe style='width:200px;hight:100px'src="{{ $film->trailer }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </td>                        
                         <td>{{ $film->year }}</td>
-                        <td>
-                            <span>
-                                <form action="{{ action('List1Controller@add2List') }}" method='get'>
-                                    @csrf
-                                    <input hidden name="filmId" type="text" value="{{ $film->id }}">
-                                    <button type="submit" class='btn btn-outline-danger'>Add </button>
-                                </form>
-                                <form action="/list/sub_list">
-                                    @csrf
-                                    <button type="submit" class='btn btn-outline-success'>Romove </button>
-                                </form>
-                            </span>
-                        </td>
+                       
                     </tr>
                 @empty
                         <p> Nothing to Display</p>
@@ -48,6 +37,4 @@
                         
                 </tbody>
         </table>
-    
-</div>
 @endsection

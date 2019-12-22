@@ -31,4 +31,7 @@ Route::get('/lists/insertList', 'List1Controller@insert'); ///list/add_list
 Route::get('/lists/add_list', 'List1Controller@index');
 
 Route::get('/lists/selectList', 'List1Controller@add2List'); //
+
+Route::get('/lists/editList1', 'List1Controller@eindex');//function
+
 Route::get('/list/listDetails', 'List1Controller@show');

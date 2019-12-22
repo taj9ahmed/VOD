@@ -36,10 +36,10 @@
                     <ul class="navbar-nav mr-auto">
                    
                                  
-                                        <li><a  class="dropdown-item" href="/films/index">Films index</a></li>
-                                        <li><a  class="dropdown-item" href="/lists/index">Lists Index</a></li>
-                                        <li><a  class="dropdown-item" href="/lists/newList">New List</a></li>
-                                        <li><a  class="dropdown-item" href="/lists/selectList">Seclect List</a></li>
+                        <li><a  class="dropdown-item" href="/films/index">Films index</a></li>
+                        <li><a  class="dropdown-item" href="/lists/index">Lists Index</a></li>
+                        <li><a  class="dropdown-item" href="/lists/newList">New List</a></li>
+                        <li><a  class="dropdown-item" href="/lists/selectList">Seclect List</a></li>
                      
 
                     <!-- Right Side Of Navbar -->
@@ -64,7 +64,7 @@
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
-                                            <li class="dropdown-item">logout</li>
+                                            <li class="">logout</li>
                                             
 
                                             
