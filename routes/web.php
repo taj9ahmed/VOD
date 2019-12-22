@@ -26,4 +26,9 @@ Route::get('/lists/index', 'List1Controller@index');//correct TO @FIND($USER->ID
 
 Route::get('/lists/newList', 'List1Controller@create'); ///createList
 
-Route::get('/lists/insertList', 'List1Controller@insert');
+Route::get('/lists/insertList', 'List1Controller@insert'); ///list/add_list
+
+Route::get('/lists/add_list', 'List1Controller@index');
+
+Route::get('/lists/selectList', 'List1Controller@add2List'); //
+Route::get('/list/listDetails', 'List1Controller@show');

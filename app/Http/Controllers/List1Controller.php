@@ -16,13 +16,18 @@ class List1Controller extends Controller
     }
     public function insert(Request $request)
     {
-        // dd($request->name);
+        $validatedData = $request->validate([
+            'name'=>'required|unique:list1s'
+        ]);
+        // dd($validatedData);
+        $newList = new \App\List1();
+        $newList->name = $validatedData['name'];
+        $newList->owner_id = \Auth::user()->id;//$validatedData['owner_id'];
+
+        $newList->save();
         // dd(\Auth::user()->id);
-        $owner_id = (\Auth::user()->id);
-        $userId = \App\User::findOrFail($owner_id);
-        // dd($userId->id);
-        $newlist = \App\List1::create(['name'=>$request->name,'owner_id'=>($userId->id)]);
-        $lists = [];
+        // $newlist = \App\List1::create(['name'=>$validatedData,'owner_id'=>(\Auth::user()->id)]);
+        // dd(\Auth::user()->id);
         $lists = \DB::select('select * from list1s');
         return view('lists.index', compact('lists'));
     }
@@ -34,5 +39,23 @@ class List1Controller extends Controller
         // $newlist->name = $request->name;
         // $newlist->save();
         return view('lists.newList');
+    }
+
+    public function add2List()//$filmId, $listId)
+    {
+        // $cur_list = \App\List1::findOrFail($listId);
+        // $cur_list->films_ids = $cur_list->films_ids . "&/&" .$filmId;
+        // return view( 'List1.show', compact(listId));
+        $lists = \DB::select('select * from list1s');
+        return view('lists.selectList', compact('lists'));
+
+    }
+
+    public function show($listId)
+    {
+        $list1 = \App\List1::findOrFail($listId);
+        // $list1 = explode(list1->films_ids,"&/&");
+        return view('List1.show', compact('list1'));
+
     }
 }

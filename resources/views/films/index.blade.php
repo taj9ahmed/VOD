@@ -6,14 +6,14 @@
     
     <div class='table-responsive'></div>
         <table class='table table-striped table-bordered table-hover' style='width:50%'>
-            <thead>
-                <tr>
+            <thead >
+                <tr >
                     <td>Film Name</td>
                     <td>Genre</td>
                     <td>Poster</td>
                     <td>Trailer</td>
                     <td>Year</td>
-                    <td style="width:200px">Options</td>
+                    <td>List </td>
                 </tr>
             </thead>
                 <tbody>
@@ -28,11 +28,13 @@
                         <td>{{ $film->year }}</td>
                         <td>
                             <span>
-                                <form action="/list/add_fav">
-                                    <button type="button" class='btn btn-outline-danger'>Add to Fav</button>
+                                <form action="{{ action('List1Controller@index') }}" method='get'>
+                                    @csrf
+                                    <button type="submit" class='btn btn-outline-danger'>Add </button>
                                 </form>
-                                <form action="/list/sub_fav">
-                                    <button type="button" class='btn btn-outline-success'>Romove from Fav</button>
+                                <form action="/list/sub_list">
+                                    @csrf
+                                    <button type="submit" class='btn btn-outline-success'>Romove </button>
                                 </form>
                             </span>
                         </td>

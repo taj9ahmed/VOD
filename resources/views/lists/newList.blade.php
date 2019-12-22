@@ -4,7 +4,8 @@
 
     <form action="/lists/insertList" method='get'>
 
-        <input name='name' type="list_name">
+        <input name='name' type="text">
+        
         <button type='submit'>Add New List</button>
 
     </form>

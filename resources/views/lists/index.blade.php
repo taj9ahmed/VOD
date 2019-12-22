@@ -9,6 +9,7 @@
         <table class='table table-striped table-bordered table-hover' style='width:50%'>
             <thead>
                 <tr>
+                    <td hidden></td>
                     <td>List Name</td>
                     <td>Owner</td>
 
@@ -18,8 +19,9 @@
                 <tbody>
                 @forelse($lists as $list)
                     <tr>
+                        <td hidden>{{ $list->id }}</td>
                         <td><strong>{{ $list->name }}</strong></td>
-                        <td>{{  $list->owner_id ?? \Auth::user()->id}}</td>
+                        <td>{{  $list->owner_id }}</td>
                         
 
                     </tr>
