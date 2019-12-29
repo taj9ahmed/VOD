@@ -22,7 +22,7 @@ class List1Controller extends Controller
         $films = array();
         foreach($films_ids as $film_id)
         {
-            $oneFilm = "";
+            
             $oneFilm = \App\Film::find($film_id);//\DB::select('select * from films where id="$film_id"');//
             array_push($films,$oneFilm);//dd($oneFilm);
         }

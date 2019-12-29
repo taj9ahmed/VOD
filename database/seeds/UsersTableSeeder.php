@@ -15,12 +15,12 @@ class UserTableSeeder extends Seeder
            DB::table('users')->insert([
             'name' => 'a',
             'email' => 'a@a.a',
-            'password' => 'aaaaaaaa',
+            'password' => crypt('aaaaaaaa'),
             ]);
             DB::table('users')->insert([
                 'name' => 'b',
                 'email' => 'b@b.b',
-                'password' => 'bbbbbbbb',
+                'password' => crypt('bbbbbbbb'),
                 ]);
             
         factory(App\User::class, 10)->create();

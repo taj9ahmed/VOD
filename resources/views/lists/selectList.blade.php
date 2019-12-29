@@ -13,7 +13,7 @@
                             <p> Nothing to Display</p>
                         @endforelse
         </select>
-        <input name="filmId" value="{{ $lists['filmId']}}">
+        <input hidden name="filmId" value="{{ $lists['filmId'] ?? '' }}">
         <div>
             
                 <button name='' type="submit" class="btn btn-primary"> Add </button>
